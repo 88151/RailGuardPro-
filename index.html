@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RailGuardPro v2.0</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>🚂 RailGuardPro v2.0</h1>
+
+<h3>Indian Railway Train Manager Running Report Generator</h3>
+
+<p>Create Professional Running Reports in Seconds</p>
+
+</header>
+
+<hr>
+
+<form id="reportForm">
+
+<h2>Basic Information</h2>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>Date</label>
+
+<input type="date" id="date">
+
+</div>
+
+<div class="form-group">
+
+<label>Train Number</label>
+
+<input type="text" id="trainNo" placeholder="Example : 18247">
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>DMC Number</label>
+
+<input type="text" id="dmcNo" placeholder="Example : 218132">
+
+</div>
+
+<div class="form-group">
+
+<label>Rake ID</label>
+
+<input type="text" id="rakeId" placeholder="Example : 02">
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>Loco Pilot Name</label>
+
+<input type="text" id="lpName" placeholder="Enter Loco Pilot Name">
+
+</div>
+
+<div class="form-group">
+
+<label>Train Manager Name</label>
+
+<input type="text" id="tmName" placeholder="Enter Train Manager Name">
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>From Station</label>
+
+<input type="text" id="fromStation" placeholder="Starting Station">
+
+</div>
+
+<div class="form-group">
+
+<label>To Station</label>
+
+<input type="text" id="toStation" placeholder="Destination Station">
+
+</div>
+
+</div>
+
+<h2>Locomotive Details</h2>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>Locomotive Type</label>
+
+<select id="locoType">
+
+<option value="">Select Loco Type</option>
+
+<option>WAG-9</option>
+
+<option>WAG-9HC</option>
+
+<option>WAG-7</option>
+
+<option>WDG-4</option>
+
+<option>WDG-4G</option>
+
+<option>WDG-5</option>
+
+<option>WDP-4</option>
+
+<option>WDP-4D</option>
+
+<option>WAP-7</option>
+
+<option>WAP-5</option>
+
+<option>MEMU</option>
+
+<option>DEMU</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Loco Number</label>
+
+<input type="text" id="locoNo" placeholder="Example : 37562">
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>Load</label>
+
+<input type="text" id="load" placeholder="Example : 08/16 = 400T">
+
+</div>
+
+<div class="form-group">
+
+<label>Brake Power</label>
+
+<input type="text" id="brakePower" placeholder="Example : 100%">
+
+</div>
+
+</div><div class="row">
+
+<div class="form-group">
+
+<label>Coach Composition</label>
+
+<input type="text" id="coachComposition" placeholder="Example : 08 Coaches">
+
+</div>
+
+<div class="form-group">
+
+<label>Maximum Speed (km/h)</label>
+
+<input type="number" id="maxSpeed" placeholder="Example : 75">
+
+</div>
+
+</div>
+
+<h2>Crew & Journey Details</h2>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>Assistant Loco Pilot</label>
+
+<input type="text" id="alpName" placeholder="Enter ALP Name">
+
+</div>
+
+<div class="form-group">
+
+<label>Guard / Train Manager HQ</label>
+
+<input type="text" id="tmHq" placeholder="Example : KTE / SGR / JBP">
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>Departure Time</label>
+
+<input type="time" id="departureTime">
+
+</div>
+
+<div class="form-group">
+
+<label>Arrival Time</label>
+
+<input type="time" id="arrivalTime">
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+
+<label>Weather Condition</label>
+
+<select id="weather">
+
+<option value="">Select Weather</option>
+
+<option>Clear</option>
+
+<option>Cloudy</option>
+
+<option>Rain</option>
+
+<option>Fog</option>
+
+<option>Storm</option>
+
+<option>Hot</option>
+
+<option>Cold</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Visibility</label>
+
+<select id="visibility">
+
+<option value="">Select</option>
+
+<option>Excellent</option>
+
+<option>Good</option>
+
+<option>Average</option>
+
+<option>Poor</option>
+
+</select>
+
+</div>
+
+</div>
+
+<h2>Train Equipment</h2>
+
+<div class="form-group">
+
+<label>Equipment Available</label>
+
+<textarea id="equipment" rows="5" placeholder="Example:
+
+02 Fire Extinguishers
+
+03 Whistles
+
+01 A-Key
+
+01 Torch
+
+01 Hand Signal Lamp"></textarea>
+
+</div>
+
+<h2>Running Remarks</h2>
+
+<div class="form-group">
+
+<label>Running Remarks</label>
+
+<textarea id="remarks" rows="7" placeholder="Write complete running remarks here..."></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>Stations Passed / Line Clear Details</label>
+
+<textarea id="stations" rows="6" placeholder="Write all stations passed during the journey..."></textarea>
+
+</div><h2>Detention / Abnormality Details</h2>
+
+<div class="form-group">
+
+<label>Detention Details</label>
+
+<textarea id="detention" rows="5"
+placeholder="Example:
+SGR : 10 Min - Signal Awaited
+KTE : 05 Min - Crossing
+ET : 03 Min - Crew Change"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>Caution Order / Speed Restriction</label>
+
+<textarea id="cautionOrder" rows="4"
+placeholder="Enter Caution Order / TSR / PSR Details"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>Signal / Track / OHE Failure</label>
+
+<textarea id="failureDetails" rows="4"
+placeholder="Enter Signal, Track, OHE or Loco Failure Details"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>Passenger / Public Complaint</label>
+
+<textarea id="publicComplaint" rows="4"
+placeholder="If any complaint received, write here"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>Safety Remarks</label>
+
+<textarea id="safetyRemarks" rows="4"
+placeholder="Write Safety Observation / Precautions"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>Overall Journey Summary</label>
+
+<textarea id="journeySummary" rows="6"
+placeholder="Write overall journey summary here..."></textarea>
+
+</div>
+
+<hr>
+
+<h2>Report Actions</h2>
+
+<div class="button-group">
+
+<button type="button" onclick="generateReport()">
+🚂 Generate
+</button>
+
+<button type="button" onclick="copyReport()">
+📋 Copy
+</button>
+
+<button type="button" onclick="downloadReport()">
+💾 PDF
+</button>
+
+<button type="button" onclick="printReport()">
+🖨 Print
+</button>
+
+<button type="reset" onclick="clearForm()">
+🗑 Clear
+</button>
+
+</div>
+
+<hr>
+
+<section class="report-section">
+
+<h2>📄 Generated Running Report</h2>
+
+<pre id="report">
+
+Your Professional Running Report will appear here...
+
+</pre>
+
+</section><hr>
+
+<footer>
+
+<h3>🚂 RailGuardPro v2.0</h3>
+
+<p><strong>Professional Running Report Generator</strong></p>
+
+<p>Designed for Indian Railway Train Managers</p>
+
+<p>Features :</p>
+
+<ul>
+
+<li>✔ Professional Running Report</li>
+
+<li>✔ Copy Report</li>
+
+<li>✔ Download PDF</li>
+
+<li>✔ Print Report</li>
+
+<li>✔ Mobile Friendly Interface</li>
+
+<li>✔ Railway Standard Report Format</li>
+
+</ul>
+
+<p>
+
+Developed By :
+<strong>Munesh Kumar Meena</strong>
+
+</p>
+
+<p>
+
+Version :
+<strong>2.0</strong>
+
+</p>
+
+<p>
+
+© 2026 RailGuardPro
+All Rights Reserved
+
+</p>
+
+</footer>
+
+</form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
