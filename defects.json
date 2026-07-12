@@ -1,0 +1,14 @@
+[
+  {
+    "code":"DB01",
+    "name":"Brake Binding"
+  },
+  {
+    "code":"DB02",
+    "name":"ACP"
+  },
+  {
+    "code":"DB03",
+    "name":"BP Pressure Low"
+  }
+]
