@@ -1,572 +1,259 @@
-/* ==========================================================
-   RailGuardPro v2.0
-   Professional Railway Theme
-   Part - 1
+/* =========================================
+   RailGuardPro v4 Professional
    Developed by Munesh Kumar Meena
-   ========================================================== */
+========================================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-:root{
-
-    --primary:#1565C0;
-    --primary-dark:#0D47A1;
-    --success:#2E7D32;
-    --danger:#C62828;
-    --warning:#EF6C00;
-    --purple:#6A1B9A;
-    --sky:#0288D1;
-
-    --white:#ffffff;
-    --light:#f5f7fb;
-    --border:#d9d9d9;
-    --text:#222;
-
-    --radius:12px;
-
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-
-    font-family:Arial,Helvetica,sans-serif;
-
-    background:linear-gradient(135deg,#dbeafe,#f8fbff);
-
-    color:var(--text);
-
-    line-height:1.5;
-
+    background:#eef3f8;
+    color:#222;
+    line-height:1.6;
 }
 
-.container{
+/* ===============================
+   HEADER
+================================ */
 
-    width:95%;
-
-    max-width:950px;
-
-    margin:20px auto;
-
-    background:var(--white);
-
-    border-radius:18px;
-
-    padding:20px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#003366;
+    color:#fff;
+    padding:15px 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
-header{
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#FFD54F;
+}
+
+/* ===============================
+   HERO
+================================ */
+
+.hero{
+
+    background:linear-gradient(135deg,#004c99,#0099cc);
+
+    color:white;
 
     text-align:center;
 
-    padding:18px;
+    padding:80px 20px;
 
-    border-radius:15px;
+}
 
-    color:#fff;
+.hero h1{
 
-    background:linear-gradient(90deg,#1565C0,#0D47A1);
+    font-size:45px;
 
     margin-bottom:20px;
 
 }
 
-header h1{
+.hero p{
 
-    font-size:32px;
+    font-size:20px;
 
-    margin-bottom:8px;
-
-}
-
-header h3{
-
-    font-size:19px;
-
-    font-weight:600;
+    margin-bottom:30px;
 
 }
 
-header p{
-
-    margin-top:8px;
-
-    font-size:15px;
-
-}
-
-h2{
-
-    margin-top:25px;
-
-    margin-bottom:15px;
-
-    color:var(--primary-dark);
-
-    border-left:6px solid var(--primary);
-
-    padding-left:12px;
-
-}
-
-.row{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:15px;
-
-    margin-bottom:15px;
-
-}
-
-.form-group{
+.heroButtons{
 
     display:flex;
 
-    flex-direction:column;
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
 
 }
 
-.form-group label{
+.heroButtons button{
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:16px;
 
     font-weight:bold;
 
-    margin-bottom:6px;
-
-    color:#222;
-
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-
-    width:100%;
-
-    padding:12px;
-
-    font-size:15px;
-
-    border:1px solid var(--border);
-
-    border-radius:10px;
-
-    background:#fff;
+    cursor:pointer;
 
     transition:.3s;
 
 }
 
-.form-group textarea{
+#loginBtn{
 
-    resize:vertical;
+    background:#ff9800;
 
-    min-height:90px;
-
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-
-    border-color:var(--primary);
-
-    outline:none;
-
-    box-shadow:0 0 10px rgba(21,101,192,.25);
-
-}/* ==========================================================
-   RailGuardPro v2.0
-   Professional CSS
-   Part - 2
-   (Continue after Part-1)
-   ========================================================== */
-
-.button-group{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:12px;
-
-    margin:25px 0;
+    color:white;
 
 }
 
-.button-group button{
+#themeBtn{
 
-    min-width:120px;
+    background:#222;
 
-    height:44px;
-
-    padding:0 18px;
-
-    border:none;
-
-    border-radius:10px;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    color:#fff;
-
-    cursor:pointer;
-
-    transition:0.25s;
-
-    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    color:white;
 
 }
 
-.button-group button:hover{
+.heroButtons button:hover{
 
-    transform:translateY(-2px);
-
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    transform:scale(1.05);
 
 }
 
-.button-group button:active{
+/* ===============================
+   DASHBOARD
+================================ */
 
-    transform:scale(.98);
+.dashboard{
 
-}
-
-/* Generate */
-
-.button-group button:nth-child(1){
-
-    background:linear-gradient(135deg,#1976D2,#0D47A1);
+    padding:60px 20px;
 
 }
 
-/* Copy */
-
-.button-group button:nth-child(2){
-
-    background:linear-gradient(135deg,#00897B,#00695C);
-
-}
-
-/* PDF */
-
-.button-group button:nth-child(3){
-
-    background:linear-gradient(135deg,#E53935,#B71C1C);
-
-}
-
-/* Print */
-
-.button-group button:nth-child(4){
-
-    background:linear-gradient(135deg,#8E24AA,#6A1B9A);
-
-}
-
-/* Clear */
-
-.button-group button:nth-child(5){
-
-    background:linear-gradient(135deg,#EF6C00,#E65100);
-
-}
-
-.report-section{
-
-    margin-top:25px;
-
-    background:#fafcff;
-
-    border:2px solid #d6e6ff;
-
-    border-radius:14px;
-
-    padding:18px;
-
-}
-
-.report-section h2{
-
-    margin-top:0;
-
-    margin-bottom:15px;
-
-}
-
-#report{
-
-    background:#fff;
-
-    border:1px solid #d0d0d0;
-
-    border-radius:10px;
-
-    padding:15px;
-
-    min-height:320px;
-
-    white-space:pre-wrap;
-
-    word-wrap:break-word;
-
-    overflow-x:auto;
-
-    font-family:Consolas,monospace;
-
-    font-size:14px;
-
-    line-height:1.6;
-
-}
-
-footer{
-
-    margin-top:30px;
+.dashboard h2{
 
     text-align:center;
 
+    color:#003366;
+
+    font-size:34px;
+
+    margin-bottom:30px;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:12px;
+
     padding:20px;
 
-    border-top:2px solid #ddd;
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.card h3{
+
+    color:#004c99;
+
+    margin-bottom:12px;
+
+}
+
+.card p{
+
+    margin-bottom:15px;
 
     color:#555;
 
 }
 
-footer h3{
+.card input{
 
-    color:#0D47A1;
+    width:100%;
 
-    margin-bottom:10px;
-
-}
-
-footer ul{
-
-    list-style:none;
+    padding:12px;
 
     margin:12px 0;
 
-}
+    border:1px solid #ccc;
 
-footer ul li{
+    border-radius:8px;
 
-    padding:4px 0;
-
-}/* ==========================================================
-   RailGuardPro v2.0
-   Professional CSS
-   Part - 3 (Final)
-   Continue after Part-2
-   ========================================================== */
-
-/* ---------- Placeholder ---------- */
-
-::placeholder{
-
-    color:#888;
-
-    opacity:1;
+    font-size:15px;
 
 }
 
-/* ---------- Scroll Bar ---------- */
+.card button{
 
-::-webkit-scrollbar{
+    width:100%;
 
-    width:8px;
+    padding:12px;
 
-    height:8px;
+    border:none;
 
-}
+    border-radius:8px;
 
-::-webkit-scrollbar-track{
+    background:#0057b8;
 
-    background:#ececec;
+    color:white;
 
-}
+    font-size:15px;
 
-::-webkit-scrollbar-thumb{
+    font-weight:bold;
 
-    background:#1565C0;
+    cursor:pointer;
 
-    border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#0D47A1;
+    transition:.3s;
 
 }
 
-/* ---------- Smooth Animation ---------- */
+.card button:hover{
 
-.container,
-button,
-input,
-select,
-textarea{
-
-    transition:all .30s ease;
+    background:#003d82;
 
 }
-
-/* ---------- Card Hover ---------- */
-
-.report-section:hover{
-
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-
-}
-
-/* ---------- Read Only Report ---------- */
-
-#report{
-
-    user-select:text;
-
-}
-
-/* ---------- Mobile Responsive ---------- */
-
-@media(max-width:768px){
-
-    .container{
-
-        width:98%;
-
-        padding:15px;
-
-    }
-
-    header h1{
-
-        font-size:24px;
-
-    }
-
-    header h3{
-
-        font-size:16px;
-
-    }
-
-    .row{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .button-group{
-
-        gap:8px;
-
-    }
-
-    .button-group button{
-
-        width:48%;
-
-        min-width:130px;
-
-        height:42px;
-
-        font-size:14px;
-
-    }
-
-    #report{
-
-        font-size:13px;
-
-    }
-
-}
-
-/* ---------- Small Mobile ---------- */
-
-@media(max-width:480px){
-
-    .button-group button{
-
-        width:100%;
-
-        height:44px;
-
-        font-size:15px;
-
-    }
-
-}
-
-/* ---------- Print Mode ---------- */
-
-@media print{
-
-    body{
-
-        background:#fff;
-
-    }
-
-    header,
-    footer,
-    .button-group{
-
-        display:none;
-
-    }
-
-    .container{
-
-        width:100%;
-
-        box-shadow:none;
-
-        border:none;
-
-        padding:0;
-
-    }
-
-    #report{
-
-        border:none;
-
-        font-size:13px;
-
-        white-space:pre-wrap;
-
-    }
-
-}
-
-/* ==========================================================
-   Reserved for Future Updates
-
-   Version 2.1
-   • PDF Export
-   • Railway Logo
-   • QR Code
-   • Auto Time
-   • Running Calculation
-   • Crew Login
-   • GPS Location
-   • Voice Input
-   • Dark Mode
-   • Cloud Backup
-
-   ========================================================== */
